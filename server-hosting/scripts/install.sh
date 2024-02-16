@@ -2,7 +2,7 @@
 
 # Note: Arguments to this script 
 #  1: string - S3 bucket for your backup save files (required)
-#  2: true|false - whether to use Satisfactory Experimental build (optional, default false)
+#  2: true|false - whether to use Palworld Experimental build (optional, default false)
 S3_SAVE_BUCKET=$1
 USE_EXPERIMENTAL_BUILD=${2-false}
 

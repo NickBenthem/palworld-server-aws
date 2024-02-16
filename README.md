@@ -1,8 +1,7 @@
-# Satisfactory Server AWS
-Automated Satisfactory Dedicated Server management on AWS
+# Palworld Server AWS
+Automated Palworld Dedicated Server management on AWS
 
 ## Intro
-FICSIT Incorporated has provided you with this tool (cost deducted from your existing balance) to assist you with Project Assembly.  This tool can help you collaborate with friends on your factory projects.
 
 This project uses [AWS CDK](https://aws.amazon.com/cdk/) to provision everything you need to host a [Satisfactory Dedicated Server](https://satisfactory.fandom.com/wiki/Dedicated_servers) on AWS.  It includes the following:
  - VPC/Network configuration
