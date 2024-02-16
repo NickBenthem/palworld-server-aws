@@ -28,28 +28,28 @@ fi
 su - ubuntu -c "$STEAM_INSTALL_SCRIPT"
 
 # enable as server so it stays up and start: https://satisfactory.fandom.com/wiki/Dedicated_servers/Running_as_a_Service
-cat << EOF > /etc/systemd/system/satisfactory.service
+cat << EOF > /etc/systemd/system/palworld.service
 [Unit]
-Description=Satisfactory dedicated server
+Description=Palworld dedicated server
 Wants=network-online.target
 After=syslog.target network.target nss-lookup.target network-online.target
 
 [Service]
 Environment="LD_LIBRARY_PATH=./linux64"
 ExecStartPre=$STEAM_INSTALL_SCRIPT
-ExecStart=/home/ubuntu/.steam/steamapps/common/SatisfactoryDedicatedServer/FactoryServer.sh
+ExecStart=/home/ubuntu/.steam/steamapps/common/PalServer/PalServer.sh EpicApp=PalServer
 User=ubuntu
 Group=ubuntu
 StandardOutput=journal
 Restart=on-failure
 KillSignal=SIGINT
-WorkingDirectory=/home/ubuntu/.steam/steamapps/common/SatisfactoryDedicatedServer
+WorkingDirectory=/home/ubuntu/.steam/steamapps/common/PalServer
 
 [Install]
 WantedBy=multi-user.target
 EOF
-systemctl enable satisfactory
-systemctl start satisfactory
+systemctl enable palworld
+systemctl start palworld
 
 # enable auto shutdown: https://github.com/feydan/satisfactory-tools/tree/main/shutdown
 cat << 'EOF' > /home/ubuntu/auto-shutdown.sh
@@ -64,7 +64,7 @@ while [ $isIdle -le 0 ]; do
     iterations=$((60 / $idleCheckFrequencySeconds * $shutdownIdleMinutes))
     while [ $iterations -gt 0 ]; do
         sleep $idleCheckFrequencySeconds
-        connectionBytes=$(ss -lu | grep 777 | awk -F ' ' '{s+=$2} END {print s}')
+        connectionBytes=$(ss -lu | grep 8211 | awk -F ' ' '{s+=$2} END {print s}')
         if [ ! -z $connectionBytes ] && [ $connectionBytes -gt 0 ]; then
             isIdle=0
         fi
@@ -84,7 +84,7 @@ chown ubuntu:ubuntu /home/ubuntu/auto-shutdown.sh
 
 cat << 'EOF' > /etc/systemd/system/auto-shutdown.service
 [Unit]
-Description=Auto shutdown if no one is playing Satisfactory
+Description=Auto shutdown if no one is playing Palworld
 After=syslog.target network.target nss-lookup.target network-online.target
 
 [Service]

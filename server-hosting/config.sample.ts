@@ -6,7 +6,7 @@ export const Config = {
      // server hosting account
      account: '',
      // prefix for all resources in this app
-     prefix: 'SatisfactoryHosting',
+     prefix: 'PalworldHosting',
      // set to false if you don't want an api to
      // restart game server and true if you do
      restartApi: true,

@@ -9,7 +9,7 @@ while [ $isIdle -le 0 ]; do
     iterations=$((60 / $idleCheckFrequencySeconds * $shutdownIdleMinutes))
     while [ $iterations -gt 0 ]; do
         sleep $idleCheckFrequencySeconds
-        connectionBytes=$(ss -lu | grep 777 | awk -F ' ' '{s+=$2} END {print s}')
+        connectionBytes=$(ss -lu | grep 8211 | awk -F ' ' '{s+=$2} END {print s}')
         if [ ! -z $connectionBytes ] && [ $connectionBytes -gt 0 ]; then
             isIdle=0
         fi
