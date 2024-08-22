@@ -1,0 +1,7 @@
+{
+  "steam_app_id" : 294420,
+  "s3_backup_path": "/home/ubuntu/.local/share/7DaysToDie",
+  "exec_start_path": "startserver.sh",
+  "exec_args": "-configfile=serverconfig.xml",
+  "working_directory": "/home/ubuntu/.steam/SteamApps/common/7 Days to Die Dedicated Server/"
+}

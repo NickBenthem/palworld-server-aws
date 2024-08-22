@@ -1,0 +1,7 @@
+{
+  "s3_backup_path": "/home/ubuntu/.steam/SteamApps/common/PalServer/Pal/Saved/SaveGames",
+  "server_description" : "Palworld dedicated server",
+  "exec_start_path": "/home/ubuntu/.steam/SteamApps/common/PalServer/PalServer.sh",
+  "exec_args": "",
+  "working_directory": "/home/ubuntu/.steam/SteamApps/common/PalServer"
+}
