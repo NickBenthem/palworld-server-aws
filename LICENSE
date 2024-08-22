@@ -20,3 +20,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+[   86.091638] cloud-init[1398]: Success! App '1690800' fully installed.
+[   86.217589] cloud-init[1398]: Created symlink /etc/systemd/system/multi-user.target.wants/palworld.service â /etc/systemd/system/palworld.service.
+         Starting [0;1;39mPalworld dedicated server[0m...
+[[0;1;31mFAILED[0m] Failed to start [0;1;39mPalworld dedicated server[0m.
+See 'systemctl status palworld.service' for details.
+[   86.355524] cloud-init[1398]: Job for palworld.service failed because the control process exited with error code.
+[   86.355639] cloud-init[1398]: See "systemctl status palworld.service" and "journalctl -xe" for details.
+[   86.361452] cloud-init[1398]: Created symlink /etc/systemd/system/multi-user.target.wants/auto-shutdown.service â /etc/systemd/system/auto-shutdown.service.
+[[0;32m  OK  [0m] Started [0;1;39mAuto shutdown if no one is playing Palworld[0m.
+[[0;32m  OK  [0m] Stopped [0;1;39mPalworld dedicated server[0m.
+         Starting [0;1;39mPalworld dedicated server[0m...
+[

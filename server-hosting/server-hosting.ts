@@ -1,11 +1,12 @@
 #!/usr/bin/env node
+/* This is the main entry point for CDK */
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { ServerHostingStack } from './server-hosting-stack';
+import { ServerHostingStack } from './server-hosting/server-hosting-stack';
 import { Config } from './config';
 
 const app = new cdk.App();
-new ServerHostingStack(app, 'ServerHostingStack', {
+new ServerHostingStack(app, Config.prefix, {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
